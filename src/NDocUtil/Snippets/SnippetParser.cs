@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using JetBrains.Annotations;
-using NUtil.Text;
 
 namespace NDocUtilLibrary.Snippets
 {

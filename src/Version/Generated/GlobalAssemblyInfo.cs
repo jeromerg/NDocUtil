@@ -7,6 +7,6 @@
     [assembly:AssemblyCulture                ("")]
     [assembly:AssemblyConfiguration          ("DEBUG")]
 
-	[assembly:AssemblyVersion("0.2.0.262")]
-	[assembly:AssemblyFileVersion("0.2.0.262")]
-    [assembly:AssemblyInformationalVersion   ("0.2.0.262, Hash f084f8c, BuildConfig DEBUG, HasLocalChange True")]
+	[assembly:AssemblyVersion("0.2.0.2")]
+	[assembly:AssemblyFileVersion("0.2.0.2")]
+    [assembly:AssemblyInformationalVersion   ("0.2.0.2, Hash d148c13, BuildConfig DEBUG, HasLocalChange True")]
