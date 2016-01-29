@@ -1,12 +1,12 @@
 	using System.Reflection;
 
-    [assembly: AssemblyProduct("NCase")]
+    [assembly: AssemblyProduct("NDocUtil")]
 	[assembly: AssemblyCompany("jeromerg")]
 	[assembly: AssemblyCopyright("Apache License 2.0")]
     [assembly:AssemblyTrademark              ("")]
     [assembly:AssemblyCulture                ("")]
     [assembly:AssemblyConfiguration          ("DEBUG")]
 
-	[assembly:AssemblyVersion("0.2.0.2")]
-	[assembly:AssemblyFileVersion("0.2.0.2")]
-    [assembly:AssemblyInformationalVersion   ("0.2.0.2, Hash d148c13, BuildConfig DEBUG, HasLocalChange True")]
+	[assembly:AssemblyVersion("0.2.0.3")]
+	[assembly:AssemblyFileVersion("0.2.0.3")]
+    [assembly:AssemblyInformationalVersion   ("0.2.0.3, Hash edbac16, BuildConfig DEBUG, HasLocalChange True")]

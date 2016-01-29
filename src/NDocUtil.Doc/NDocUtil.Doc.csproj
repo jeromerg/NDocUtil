@@ -64,21 +64,32 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\MyDocumentation.cs">
+      <Link>MyDocumentation.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Readme.cs">
+      <Link>Readme.cs</Link>
+    </Compile>
     <Compile Include="..\Version\Generated\GlobalAssemblyInfo.cs">
       <Link>GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Readme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MyDocumentation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\MyDocumentation.md">
+      <Link>MyDocumentation.md</Link>
+    </None>
+    <None Include="..\..\Presentation.pptx">
+      <Link>Presentation.pptx</Link>
+    </None>
+    <None Include="..\..\Readme.md">
+      <Link>Readme.md</Link>
+    </None>
     <None Include="packages.config" />
-    <None Include="MyDocumentation.md" />
-    <None Include="Readme.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NDocUtil\NDocUtil.csproj">
