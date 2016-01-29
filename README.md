@@ -1,3 +1,6 @@
+Status:
+[![Build status](https://ci.appveyor.com/api/projects/status/rrf7yq8vnh8ihm11/branch/master?svg=true)](https://ci.appveyor.com/project/jeromerg/ndocutil/branch/master) [![NuGet](https://img.shields.io/nuget/dt/NDocUtil.svg)](https://www.nuget.org/packages/NDocUtil/)
+
 NDocUtil
 ========
 
@@ -209,9 +212,9 @@ While you insert an image into a powerpoint presentation, you can choose to add 
 
 ![c](./Image/PowerPoint-Link-to-File.png)
 
-It is a good opportunity for us to enable the automatic refreshing of code snippets:
+That way, you can automatically update snippet within powerpoint presentations! Here is how you need to proceed: 
 
-- Let NDocUtil exports the snippets as image, with the following call:
+1. Export snippets as image with NDocUtil:
 	<!--# SaveSnippetsAsImage3 -->
 	```C#
     docu.SaveSnippetsAsImage(ImageFormat.Emf, path:"pathToPowerpointFile");
@@ -220,9 +223,9 @@ It is a good opportunity for us to enable the automatic refreshing of code snipp
 - Then insert the EMF file with the option "Link to File" 
 	- *Remark*: the image file must be located in the same folder as the powerpoint file in order to remain portable.
 
-That's it: The snippets will be refreshed on every build inside your presentation!
+That's it: The snippets will be refreshed on every build!
 
-The result can be seen in [this presentation](./Presentation.pptx).  
+You can see and test with the following [Presentation.pptx](./Presentation.pptx).  
 
 
 [MyDocumentation_markdown]: MyDocumentation.md 
