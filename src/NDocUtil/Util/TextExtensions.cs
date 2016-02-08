@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using JetBrains.Annotations;
 
-namespace NDocUtilLibrary
+namespace NDocUtilLibrary.Util
 {
-    /// <summary>Copy from NUtil in order to avoid dual dependency in NUtil.Doc project</summary>
-    internal static class TextExtensions
+    public static class TextExtensions
     {
         [NotNull, ItemNotNull]
         public static IEnumerable<string> Lines([NotNull] this string s)
@@ -30,13 +29,12 @@ namespace NDocUtilLibrary
         {
             if (txt == null) throw new ArgumentNullException("txt");
 
-            string[] lines = txt.Split(new[] {Environment.NewLine}, StringSplitOptions.None);
+            string preprocessedTxt = ConvertTabToSpace(txt, tabIndentation);
 
-            if (lines.Length == 0)
-                return txt;
+            string[] lines = preprocessedTxt.Split(new[] {Environment.NewLine}, StringSplitOptions.None);
 
             // ReSharper disable once AssignNullToNotNullAttribute
-            int indentMin = lines.Min(line => GetIndent(line, tabIndentation));
+            int indentMin = lines.Min(line => GetIndent(line));
 
             string desindentedTxt = lines
                 // ReSharper disable once PossibleNullReferenceException
@@ -63,26 +61,26 @@ namespace NDocUtilLibrary
             return sb.ToString();
         }
 
-        private static int GetIndent([NotNull] string s, int tabIndentation)
+        private static int GetIndent([NotNull] string s)
         {
-            if (s == null) throw new ArgumentNullException("s");
-
             int result = 0;
             foreach (char c in s)
             {
-                switch (c)
-                {
-                    case '\t':
-                        result += tabIndentation;
-                        break;
-                    case ' ':
-                        result += 1;
-                        break;
-                    default:
-                        return result;
-                }
+                if (c == ' ')
+                    result += 1;
+                else
+                    return result;
             }
             return int.MaxValue;
         }
-    }
+
+        [NotNull]
+        private static string ConvertTabToSpace([NotNull] this string txt, int tabIndentation)
+        {
+            string spaces = new string(' ', tabIndentation);
+            string result = txt.Replace("\t", spaces);
+            return result;
+        }
+
+   }
 }

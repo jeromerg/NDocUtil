@@ -10,6 +10,7 @@ using JetBrains.Annotations;
 using NDocUtilLibrary.ConsoleUtil;
 using NDocUtilLibrary.ExportToImage;
 using NDocUtilLibrary.Snippets;
+using NDocUtilLibrary.Util;
 
 namespace NDocUtilLibrary
 {
@@ -124,6 +125,11 @@ namespace NDocUtilLibrary
             }
         }
 
+        /// <param name="removeLineTrailingSpaces">
+        /// FIX: inserting EMF images into a Powerpoint presentation, and then 
+        /// exporting to PDF results in the following issue: if a line ends 
+        /// with a space then a square is displayed at the end of the line!!!
+        /// </param>
         public void SaveSnippetsAsImage(
             [NotNull] ImageFormat imageFormat,
             [NotNull] string path = @"snippet\",
@@ -131,7 +137,8 @@ namespace NDocUtilLibrary
             float leftBorder = 0,
             float topBorder = 0,
             float rightBorder = 0,
-            float bottomBorder = 0)
+            float bottomBorder = 0,
+            bool removeLineTrailingSpaces = false)
         {
             foreach (Snippet sn in GetAllSnippets())
             {
@@ -145,6 +152,13 @@ namespace NDocUtilLibrary
                                          : Languages.CSharp;
 
                 string divSnippet = mCodeColorizer.Colorize(sn.Body, language);
+
+                if(removeLineTrailingSpaces)
+                {
+                    // ReSharper disable once AssignNullToNotNullAttribute
+                    divSnippet = divSnippet.Lines().Select(l => l.TrimEnd(' ', '\t')).JoinLines();
+                }
+
                 string htmlSnippet = string.Format(SNIPPET_HTML_TEMPLATE, divSnippet);
 
                 Metafile image = HtmlToMetafileUtil.Convert(htmlSnippet, leftBorder, topBorder, rightBorder, bottomBorder);
