@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
 
-namespace NDocUtilLibrary
+namespace NDocUtilLibrary.Util
 {
     /// <summary>Copy from NUtil in order to avoid dual dependency in NUtil.Doc project</summary>
     internal static class LinqForeachExtensions
