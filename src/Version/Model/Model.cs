@@ -52,7 +52,7 @@ namespace NGitVersion.Model
 
         public string Minor
         {
-            get { return "2"; }
+            get { return "3"; }
         }
 
         public string Build
