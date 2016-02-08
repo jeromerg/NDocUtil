@@ -1,6 +1,8 @@
 Status:
 [![Build status](https://ci.appveyor.com/api/projects/status/rrf7yq8vnh8ihm11/branch/master?svg=true)](https://ci.appveyor.com/project/jeromerg/ndocutil/branch/master) [![NuGet](https://img.shields.io/nuget/dt/NDocUtil.svg)](https://www.nuget.org/packages/NDocUtil/)
 
+(Related project: [NCase])
+
 NDocUtil
 ========
 
